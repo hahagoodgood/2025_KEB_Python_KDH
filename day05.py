@@ -1,50 +1,28 @@
-# decorator
-def description(f):  # closure
-    def inner(*args):
-        print(f.__name__)
-        print(f.__doc__)
-        r = f(*args)
-        return r
-
-    return inner
-
-
-def squares(n):
+def fibonacci_recursion(n)->int:
     """
-    제곱 함수
+    피보나치 수 계산함수 (재귀함수 버전)
+    :param n:
+    :return: 파보나치 계산 결과 값
     """
-    return n * n
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci_recursion(n-2) + fibonacci_recursion(n-1)
 
-@description
-def power(b, e):
+def fibonacci_loop(n) -> int:
     """
-    거듭제곱 함수
+    피보나치 수 계산함수 (반복문 버전)
+    :param n:
+    :return: 피보나치 계산 결과 값
     """
-    result = 1
-    for _ in range(e):
-        result = result * b
-    return result
+    n_list=[0 ,1]
+    for i in range(n+1):
+        n_list.append(n_list[i] + n_list[i + 1])
 
+    return n_list[n]
 
-f1 = description(squares)
-print(f1(9))
-print(power(2, 10))
-# f2 = description(power)
-# print(f2(2, 10))
-
-# print(squares(7))
-# print(squares.__doc__)
-
-# def my_range(first=0, last=5, step=1):
-#     number = first
-#     while number < last:
-#         yield number
-#         number += step
-#
-# r = my_range()
-# print(r, type(r))
-#
-# for x in r:
-#     print(x)
-# for x in r:
-#     print(x)
+n = int(input())
+print(fibonacci_loop(n))
+print(fibonacci_recursion(n))
