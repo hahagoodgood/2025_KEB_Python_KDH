@@ -1,4 +1,4 @@
-def tg_abs(n):
+def tg_abs(n) -> int:
     """
     return absolute value of parameter n
     :param n:
@@ -31,3 +31,6 @@ def tg_fibonacci_loop(n)->int:
     for i in range(n+1):
         n_list.append(n_list[i] + n_list[i+1])
     return n_list[n]
+
+if __name__ != "__main__":
+    print("tgmath.py 파일을 실행하셨습니다")
