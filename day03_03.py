@@ -7,6 +7,8 @@ snacks = ["초콜릿", "치즈", "삽겹살", "양꼬치"]
 drinks.append("사케")
 snacks.append("광어회")
 snacks[0] = "낙곱새"
+drinks.append("데킬라")
+snacks.append("소금")
 
 def print_matched_snack(drinks, snacks) -> int:
     print("다음 술중에 고르세요.")
