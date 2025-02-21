@@ -8,7 +8,7 @@ def tg_abs(n) -> int:
         return -n
     return n
 
-def tg_fibonacci(n) -> int:
+def tg_fibonacci_recursion(n) -> int:
     """
     Calculate fibonacci number (ver . recursive)
     :param n:
@@ -19,7 +19,7 @@ def tg_fibonacci(n) -> int:
     elif n == 1:
         return 1
     else:
-        return tg_fibonacci(n - 1) + tg_fibonacci(n - 2)
+        return tg_fibonacci_recursion(n - 1) + tg_fibonacci_recursion(n - 2)
 
 def tg_fibonacci_loop(n)->int:
     """
